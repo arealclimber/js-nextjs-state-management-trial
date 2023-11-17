@@ -17,10 +17,17 @@ export default function Home() {
         </Link>
         <Link
           href="/zustand_page"
-          className="text-blue-800 hover:text-blue-300"
+          className="text-blue-800 hover:text-blue-300 border-black border-b py-5"
         >
           {" "}
           Zustand{" "}
+        </Link>
+        <Link
+          href="/redux_toolkit_page"
+          className="text-blue-800 hover:text-blue-300"
+        >
+          {" "}
+          Redux Toolkit{" "}
         </Link>
       </div>
     </>

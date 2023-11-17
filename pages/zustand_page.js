@@ -1,22 +1,13 @@
-import { create } from "zustand";
+import { useStore } from "@/store/zustand";
 import styles from "../styles/Home.module.css";
 import Head from "next/head";
-
-// Zustand store creation.
-const useStore = create((set) => ({
-  teamA: 0,
-  teamB: 0,
-  increaseTeamAScore: () => set((state) => ({ teamA: state.teamA + 1 })),
-  decreaseTeamAScore: () => set((state) => ({ teamA: state.teamA - 1 })),
-  increaseTeamBScore: () => set((state) => ({ teamB: state.teamB + 1 })),
-  decreaseTeamBScore: () => set((state) => ({ teamB: state.teamB - 1 })),
-}));
+import Link from "next/link";
 
 // Winner Component that shows the final results.
 const Winner = () => {
   const scoreA = useStore((state) => state.teamA);
   const scoreB = useStore((state) => state.teamB);
-  console.log("Winner111");
+  console.log("Winner");
   return (
     <div className={styles.winner}>
       <h1 className={styles.text}>Winner</h1>
@@ -99,7 +90,8 @@ export default function ZustandPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div>
+      <div className="w-full flex justify-center">
+        <Link href="/">Home</Link>
         <div className={styles.container}>
           <main className={styles.main}>
             <h1 className="text-3xl font-bold text-black">Zustand</h1>
