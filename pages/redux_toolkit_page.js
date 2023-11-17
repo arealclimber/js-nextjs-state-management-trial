@@ -47,6 +47,7 @@ const Player = ({ label, score, onIncrease, onDecrease }) => (
 const PlayerA = () => {
   const dispatch = useDispatch();
   const score = useSelector((state) => state.scores.teamA);
+  console.log("PlayerA");
 
   return (
     <Player
@@ -62,6 +63,7 @@ const PlayerA = () => {
 const PlayerB = () => {
   const dispatch = useDispatch();
   const score = useSelector((state) => state.scores.teamB);
+  console.log("PlayerB");
 
   return (
     <Player
