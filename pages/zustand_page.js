@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 import styles from "../styles/Home.module.css";
 import Head from "next/head";
 
@@ -16,7 +16,7 @@ const useStore = create((set) => ({
 const Winner = () => {
   const scoreA = useStore((state) => state.teamA);
   const scoreB = useStore((state) => state.teamB);
-  console.log("Winner");
+  console.log("Winner111");
   return (
     <div className={styles.winner}>
       <h1 className={styles.text}>Winner</h1>
