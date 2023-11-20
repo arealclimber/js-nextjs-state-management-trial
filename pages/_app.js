@@ -1,5 +1,5 @@
 import StoreContextProvider from "@/context/store_context";
-import { store } from "@/store/redux_toolkit";
+import { store } from "@/stores/redux_toolkit";
 import "@/styles/globals.css";
 import { Provider } from "react-redux";
 

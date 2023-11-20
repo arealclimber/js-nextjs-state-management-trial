@@ -1,12 +1,12 @@
-import { useStore } from "@/store/zustand";
+import { useGlobalStore } from "@/stores/zustand";
 import styles from "../styles/Home.module.css";
 import Head from "next/head";
 import Link from "next/link";
 
 // Winner Component that shows the final results.
 const Winner = () => {
-  const scoreA = useStore((state) => state.teamA);
-  const scoreB = useStore((state) => state.teamB);
+  const scoreA = useGlobalStore((state) => state.teamA);
+  const scoreB = useGlobalStore((state) => state.teamB);
   console.log("Winner");
   return (
     <div className={styles.winner}>
@@ -37,9 +37,13 @@ const Player = ({ label, score, onIncrease, onDecrease }) => (
 
 // Player A Components that subscribed the Context.
 const PlayerA = () => {
-  const score = useStore((state) => state.teamA);
-  const increaseTeamAScore = useStore((state) => state.increaseTeamAScore);
-  const decreaseTeamAScore = useStore((state) => state.decreaseTeamAScore);
+  const score = useGlobalStore((state) => state.teamA);
+  const increaseTeamAScore = useGlobalStore(
+    (state) => state.increaseTeamAScore
+  );
+  const decreaseTeamAScore = useGlobalStore(
+    (state) => state.decreaseTeamAScore
+  );
   console.log("PlayerA");
 
   return (
@@ -54,9 +58,13 @@ const PlayerA = () => {
 
 // Player B Components that subscribed the Context.
 const PlayerB = () => {
-  const score = useStore((state) => state.teamB);
-  const increaseTeamAScore = useStore((state) => state.increaseTeamBScore);
-  const decreaseTeamAScore = useStore((state) => state.decreaseTeamBScore);
+  const score = useGlobalStore((state) => state.teamB);
+  const increaseTeamAScore = useGlobalStore(
+    (state) => state.increaseTeamBScore
+  );
+  const decreaseTeamAScore = useGlobalStore(
+    (state) => state.decreaseTeamBScore
+  );
   console.log("PlayerB");
   return (
     <Player
