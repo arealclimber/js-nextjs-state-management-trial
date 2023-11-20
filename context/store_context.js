@@ -1,10 +1,27 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
+import { useGlobalStore } from "@/stores/zustand";
 
 const Context = createContext(null);
 
 const useStore = () => {
   const [teamA, setTeamA] = useState(0);
   const [teamB, setTeamB] = useState(0);
+
+  const { increaseTeamAScore } = useGlobalStore();
+
+  const resetZustand = () => {
+    console.log("resetZustand called");
+    increaseTeamAScore();
+    increaseTeamAScore();
+    increaseTeamAScore();
+    increaseTeamAScore();
+    increaseTeamAScore();
+  };
+
+  useEffect(() => {
+    resetZustand();
+  }, []);
+
   return {
     teamA, // Team A's score
     teamB, // Team B's score

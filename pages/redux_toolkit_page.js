@@ -7,7 +7,7 @@ import {
   decreaseTeamB,
   increaseTeamA,
   increaseTeamB,
-} from "@/store/redux_toolkit";
+} from "@/stores/redux_toolkit";
 import Link from "next/link";
 
 // Winner Component that shows the final results.
