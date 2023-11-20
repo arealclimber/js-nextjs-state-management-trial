@@ -24,10 +24,17 @@ export default function Home() {
         </Link>
         <Link
           href="/redux_toolkit_page"
-          className="text-blue-800 hover:text-blue-300"
+          className="text-blue-800 hover:text-blue-300 border-black border-b py-5"
         >
           {" "}
           Redux Toolkit{" "}
+        </Link>
+        <Link
+          href="/zustand_create_store_page"
+          className="text-blue-800 hover:text-blue-300"
+        >
+          {" "}
+          Zustand create store{" "}
         </Link>
       </div>
     </>
