@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 // Zustand store creation.
-export const useStore = create((set) => ({
+export const useGlobalStore = create((set) => ({
   teamA: 0,
   teamB: 0,
   increaseTeamAScore: () => set((state) => ({ teamA: state.teamA + 1 })),
